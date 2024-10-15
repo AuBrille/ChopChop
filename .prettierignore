@@ -1,0 +1,10 @@
+build
+coverage
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+.mesh
+src/i18n/locales
