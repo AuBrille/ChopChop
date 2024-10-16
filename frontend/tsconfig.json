@@ -7,12 +7,14 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
-    "noEmit": true,
-    "incremental": true,
-    "module": "esnext",
+    "module": "ESNext",
+    "target": "ES2020", // Target modern JavaScript
     "esModuleInterop": true,
+    "strict": true,
+    "noEmit": true,
     "moduleResolution": "node",
+    "outDir": "./dist",
+    "incremental": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -26,7 +28,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "backend/prisma/seed.mts"
   ],
   "exclude": [
     "node_modules"
