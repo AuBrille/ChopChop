@@ -33,6 +33,7 @@
     "backend/prisma/seed.mts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "generated.ts"
   ]
 }
