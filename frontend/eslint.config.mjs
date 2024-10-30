@@ -58,13 +58,7 @@ const restrictEnvAccess = tsEslint.config({
 const baseConfig = tsEslint.config(
   {
     // Globally ignored files
-    ignores: [
-      '.next',
-      'storybook-static',
-      'dist',
-      'node_modules',
-      '**/generated/*',
-    ],
+    ignores: ['.next', 'storybook-static', 'dist', 'node_modules', '**/generated/*'],
   },
   {
     files: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.mjs'],

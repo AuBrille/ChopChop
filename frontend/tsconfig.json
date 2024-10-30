@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,15 +16,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/ui/*": [
-        "./components/ui/*"
-      ]
+      "@/*": ["./*"],
+      "@/components/*": ["./components/*"],
+      "@/ui/*": ["./components/ui/*"]
     },
     "plugins": [
       {
@@ -43,8 +33,5 @@
     "**/*.tsx",
     "backend/prisma/seed.mts"
   ],
-  "exclude": [
-    "node_modules",
-    "generated.ts"
-  ]
+  "exclude": ["node_modules", "generated.ts"]
 }
