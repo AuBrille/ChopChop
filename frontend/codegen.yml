@@ -1,6 +1,6 @@
 schema: http://localhost:4001/graphql
-documents: "./src/**/*.graphql"
-generates: 
+documents: './src/**/*.graphql'
+generates:
   ./src/graphql/generated.ts:
     plugins:
       - typescript
