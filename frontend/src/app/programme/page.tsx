@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Component() {
   return (
@@ -18,10 +18,10 @@ export default function Component() {
       </header>
 
       {/* Banner */}
-      
+
       <div className="bg-green-500 text-white text-center py-20 mb-8">
         <h1 className="text-4xl font-bold">Programme</h1>
-        <p className="mt-2 text-xl">Trouvez l'entraînement qui vous convient</p>
+        <p className="mt-2 text-xl">Trouvez l&apos;entraînement qui vous convient</p>
       </div>
     </div>
   )

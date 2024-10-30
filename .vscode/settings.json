@@ -1,0 +1,6 @@
+{
+  "cSpell.words": ["clsx"],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
