@@ -1,6 +1,6 @@
 'use client';
 
-export default function Component() {
+export default function Page() {
   return (
     <>
       {/* Banner */}
