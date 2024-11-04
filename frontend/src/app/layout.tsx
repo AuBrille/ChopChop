@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-import Link from 'next/link';
-
 import ApolloProviderBase from '../../providers/apollo/ApolloProvider';
 
 import './globals.css';
@@ -19,8 +17,8 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
     <html suppressHydrationWarning>
       <body className="h-screen text-neutral-700">
         <ApolloProviderBase>
-          <div className="min-h-screen bg-green-100">
-            {/* Header */}
+          {/* <div className="min-h-screen bg-green-100">
+             
             <header className="bg-white shadow-md">
               <nav className="container mx-auto flex items-center justify-between px-4 py-4">
                 <Link href="/home" className="text-xl font-bold text-green-600">
@@ -55,7 +53,8 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
               </nav>
             </header>
             {children}
-          </div>
+          </div> */}
+          {children}
         </ApolloProviderBase>
       </body>
     </html>
