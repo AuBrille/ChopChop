@@ -4,7 +4,6 @@ export const Home = () => {
   return (
     <>
       {/* Banner */}
-
       <div
         style={{
           backgroundImage: `url("./${header.src}")`,
