@@ -8,19 +8,22 @@ import { cva } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'text-neutral-200 focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default:
-          'border border-lime-800 bg-red-500 font-bold hover:border-yellow-500 hover:bg-lime-500 active:border-neutral-950 active:bg-gray-500',
-        success: 'bg-green-500 text-white shadow-sm hover:bg-green-600 active:bg-green-700',
+        default: 'border bg-neutral-400 shadow-sm hover:bg-neutral-500 active:bg-neutral-600',
+        success: 'border bg-green-500 shadow-sm hover:bg-green-600 active:bg-green-700',
+        error: 'border bg-red-500 shadow-sm hover:bg-red-600 active:bg-red-700',
+        info: 'border bg-blue-500 shadow-sm hover:bg-blue-600 active:bg-blue-700',
+        warning: 'border bg-yellow-400 shadow-sm hover:bg-yellow-500 active:bg-yellow-600',
+        outline:'border border-neutral-700 bg-white text-neutral-700 shadow-sm hover:bg-neutral-200 active:bg-neutral-300',
       },
       size: {
-        default: 'h-8 rounded px-4 py-2',
-        sm: 'h-7 rounded px-3 text-xs',
-        md: 'h-9 rounded px-6 py-3',
-        lg: 'h-10 rounded px-8',
+        default: 'h-8 px-4 py-2',
+        sm: 'h-7 px-3 text-sm',
+        md: 'h-9 px-6 py-3',
+        lg: 'h-10 px-8',
         icon: 'h-9 w-9',
       },
     },
