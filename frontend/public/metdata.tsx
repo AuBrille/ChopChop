@@ -1,0 +1,18 @@
+export const metData = [
+    {activity:"Pull-ups, moderate effort", MET:8, ID:1},
+    {activity:"Push-ups, moderate effort", MET:8, ID:2},
+    {activity:"Sit-ups, crunches, moderate effort", MET:4, ID:3},
+    {activity:"Plank (static hold)", MET:3.8, ID:4},
+    {activity:"Jumping jacks", MET:8, ID:5},
+    {activity:"Squats (moderate pace, bodyweight)", MET:5, ID:6},
+    {activity:"Lunges (moderate pace)", MET:4.5, ID:7},
+    {activity:"Mountain climbers", MET:8, ID:8},
+    {activity:"High knees", MET:8.5, ID:9},
+    {activity:"Muscle-Up", MET:13, ID:10},
+    {activity:"Dips", MET:7, ID:11},
+    {activity:"Handstand Hold (Static)", MET:5, ID:12},
+    {activity:"Handstand Push-Ups", MET:10, ID:13},
+    {activity:"Pistol Squats (single-leg squat)", MET:9, ID:14},
+    {activity:"L-Sit Hold (static)", MET:5, ID:15},
+    {activity:"L-Sit on Bar (Leg Elevation to L)", MET:7, ID:16},
+];

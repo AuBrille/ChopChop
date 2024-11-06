@@ -14,12 +14,12 @@ const buttonSizes = ['sm', 'default', 'md', 'lg', 'icon'] as const;
 export const Component = () => {
   return (
     <div className="flex flex-col gap-2 bg-neutral-200 p-8">
-      {variants.map((buttonVariant) => {
+      {variants.map((variants) => {
         return (
           <div className="flex gap-2">
             {buttonSizes.map((buttonSize) => {
               return (
-                <Button variant={buttonVariant} size={buttonSize}>
+                <Button variant={variants} size={buttonSize}>
                   {buttonSize === 'icon' ? 'i' : `Button ${buttonSize}`}
                 </Button>
               );
@@ -28,11 +28,11 @@ export const Component = () => {
         );
       })}
       <div className="flex flex-col gap-2">
-        {variants.map((cardVariant) => {
+        {variants.map((variants) => {
           return (
-            <Card className="w-[560px]" variant={cardVariant} key={cardVariant}>
+            <Card className="w-[560px]" variant={variants} key={variants}>
               <CardHeader>
-                <CardTitle>{`Card ${cardVariant}`}</CardTitle>
+                <CardTitle>{`Card ${variants}`}</CardTitle>
                 <CardDescription>Description</CardDescription>
               </CardHeader>
               <CardContent>
@@ -41,7 +41,7 @@ export const Component = () => {
                 </form>
               </CardContent>
               <CardFooter className="flex justify-end">
-                <Button variant={cardVariant}>{`Button ${cardVariant}`}</Button>
+                <Button variant={variants}>{`Button ${variants}`}</Button>
               </CardFooter>
             </Card>
           );
