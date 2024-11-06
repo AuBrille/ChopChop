@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function MetCalculator() {
+export const MetCalculator=()=> {
   const [speed, setSpeed] = useState(0); 
   const [met, setMet] = useState(0); 
 
@@ -32,4 +32,4 @@ function MetCalculator() {
   );
 }
 
-export default MetCalculator;
+
