@@ -8,14 +8,13 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-const buttonVariants = ['default', 'success', 'error', 'info', 'warning', 'outline'] as const;
+const variants = ['default', 'success', 'error', 'info', 'warning', 'outline'] as const;
 const buttonSizes = ['sm', 'default', 'md', 'lg', 'icon'] as const;
-const cardVariants = ['default', 'success', 'error', 'info', 'warning', 'outline'] as const;
 
 export const Component = () => {
   return (
     <div className="flex flex-col gap-2 bg-neutral-200 p-8">
-      {buttonVariants.map((buttonVariant) => {
+      {variants.map((buttonVariant) => {
         return (
           <div className="flex gap-2">
             {buttonSizes.map((buttonSize) => {
@@ -29,7 +28,7 @@ export const Component = () => {
         );
       })}
       <div className="flex flex-col gap-2">
-        {cardVariants.map((cardVariant) => {
+        {variants.map((cardVariant) => {
           return (
             <Card className="w-[560px]" variant={cardVariant} key={cardVariant}>
               <CardHeader>

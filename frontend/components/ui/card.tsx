@@ -23,15 +23,10 @@ const cardVariants = cva('rounded border border-neutral-700 text-white shadow', 
 });
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {
-  asChild?: boolean;
-}
+    VariantProps<typeof cardVariants> {}
 
-const Card: React.FC<CardProps> = ({ asChild, className, variant, ...rest }) => {
-  const Component = asChild ? 'span' : 'div';
-  //const cardClasses = cardVariants();
-
-  return <Component className={cn(cardVariants({ variant, className }))} {...rest} />;
+const Card: React.FC<CardProps> = ({ className, variant, ...rest }) => {
+  return <div className={cn(cardVariants({ variant, className }))} {...rest} />;
 };
 
 Card.displayName = 'Card';
