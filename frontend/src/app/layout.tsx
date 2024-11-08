@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    // eslint-disable-next-line jsx-a11y/html-has-lang
-    <html suppressHydrationWarning>
+    
+    <html lang='en' suppressHydrationWarning>
       <body className="h-screen text-neutral-700">
         <ApolloProviderBase>
           <div className="min-h-screen bg-green-100">

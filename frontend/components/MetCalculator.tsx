@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-export const MetCalculator=()=> {
-  const [speed, setSpeed] = useState(0); 
-  const [met, setMet] = useState(0); 
+export const MetCalculator = () => {
+  const [speed, setSpeed] = useState(0);
+  const [met, setMet] = useState(0);
 
   const handleSpeedChange = (entry: React.ChangeEvent<HTMLInputElement>) => {
-    const inputSpeed = parseFloat(entry.target.value || "0"); 
+    const inputSpeed = parseFloat(entry.target.value || '0');
     setSpeed(inputSpeed);
-  
-  
 
-    
-    const calculatedMet = 1 + (inputSpeed / 1.5);
+    const calculatedMet = 1 + inputSpeed / 1.5;
     setMet(calculatedMet);
   };
 
@@ -30,6 +27,4 @@ export const MetCalculator=()=> {
       <p>Calculated MET : {met.toFixed(2)}</p>
     </div>
   );
-}
-
-
+};
