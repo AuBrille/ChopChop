@@ -5,6 +5,8 @@ import ApolloProviderBase from '../../providers/apollo/ApolloProvider';
 
 import './globals.css';
 
+import Link from 'next/link';
+
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
@@ -12,13 +14,13 @@ export const metadata: Metadata = {
   description: 'A basic Next.js application',
 };
 
-const RootLayout = async ({ children }: { children: ReactNode }) => {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html suppressHydrationWarning>
+    
+    <html lang='en' suppressHydrationWarning>
       <body className="h-screen text-neutral-700">
         <ApolloProviderBase>
-          {/* <div className="min-h-screen bg-green-100">
-             
+          <div className="min-h-screen bg-green-100">
             <header className="bg-white shadow-md">
               <nav className="container mx-auto flex items-center justify-between px-4 py-4">
                 <Link href="/home" className="text-xl font-bold text-green-600">
@@ -32,29 +34,28 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
                     Home
                   </Link>
                   <Link
-                    href="/depense"
+                    href="/consumption"
                     className="rounded bg-green-500 px-3 py-2 text-white transition-colors hover:bg-green-600"
                   >
-                    Dépense
+                    Consumption
                   </Link>
                   <Link
-                    href="/recette"
+                    href="/receipts"
                     className="rounded bg-green-500 px-3 py-2 text-white transition-colors hover:bg-green-600"
                   >
-                    Recette
+                    Receips
                   </Link>
                   <Link
-                    href="/programme"
+                    href="/program"
                     className="rounded bg-green-500 px-3 py-2 text-white transition-colors hover:bg-green-600"
                   >
-                    Programme
+                    Program
                   </Link>
                 </div>
               </nav>
             </header>
             {children}
-          </div> */}
-          {children}
+          </div>
         </ApolloProviderBase>
       </body>
     </html>

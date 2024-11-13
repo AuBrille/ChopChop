@@ -1,12 +1,5 @@
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 
 const variants = ['default', 'success', 'error', 'info', 'warning', 'outline'] as const;
 const buttonSizes = ['sm', 'default', 'md', 'lg', 'icon'] as const;
@@ -14,12 +7,12 @@ const buttonSizes = ['sm', 'default', 'md', 'lg', 'icon'] as const;
 export const Component = () => {
   return (
     <div className="flex flex-col gap-2 bg-neutral-200 p-8">
-      {variants.map((buttonVariant) => {
+      {variants.map((variant) => {
         return (
-          <div className="flex gap-2">
+          <div className="flex gap-2" key={variant}>
             {buttonSizes.map((buttonSize) => {
               return (
-                <Button variant={buttonVariant} size={buttonSize}>
+                <Button variant={variant} size={buttonSize} key={buttonSize}>
                   {buttonSize === 'icon' ? 'i' : `Button ${buttonSize}`}
                 </Button>
               );
@@ -27,23 +20,21 @@ export const Component = () => {
           </div>
         );
       })}
-      <div className="flex flex-col gap-2">
-        {variants.map((cardVariant) => {
+      <div className="flex w-[560px] flex-col gap-2">
+        {variants.map((variant) => {
           return (
-            <Card className="w-[560px]" variant={cardVariant} key={cardVariant}>
-              <CardHeader>
-                <CardTitle>{`Card ${cardVariant}`}</CardTitle>
-                <CardDescription>Description</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form>
-                  <div className="grid w-full items-center gap-4">Content</div>
-                </form>
-              </CardContent>
-              <CardFooter className="flex justify-end">
-                <Button variant={cardVariant}>{`Button ${cardVariant}`}</Button>
-              </CardFooter>
-            </Card>
+            <Card
+              variant={variant}
+              key={variant}
+              title={`Card ${variant}`}
+              headerDescription="Description"
+              content={<div className="grid w-full items-center gap-4">Content</div>}
+              footer={
+                <div className="flex justify-end">
+                  <Button variant={variant}>{`Button ${variant}`}</Button>
+                </div>
+              }
+            />
           );
         })}
       </div>
