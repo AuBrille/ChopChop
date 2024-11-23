@@ -31,10 +31,11 @@ interface CardProps {
   headerDescription?: React.ReactNode;
   content: React.ReactNode;
   footer?: React.ReactNode;
+  image?: React.ReactNode;
 }
 
 export const Card = (props: CardProps) => {
-  const { variant, title, headerDescription, content, footer } = props;
+  const { variant, title, headerDescription, content, image, footer } = props;
   return (
     <CardLayout variant={variant}>
       <CardHeader>
@@ -42,7 +43,18 @@ export const Card = (props: CardProps) => {
         {headerDescription && <CardDescription>{headerDescription}</CardDescription>}
       </CardHeader>
       <CardContent>{content}</CardContent>
-      {footer && <CardFooter>{footer}</CardFooter>}
+      <div className="flex flex-row items-start">
+        <div className="flex flex-shrink-0">{footer && <CardFooter>{footer}</CardFooter>}</div>
+        {image && (
+          <CardPicture>
+            {typeof image === 'string' ? (
+              <img src={image} alt="illustration" className="h-auto w-1/4 rounded pb-8" />
+            ) : (
+              image
+            )}
+          </CardPicture>
+        )}
+      </div>
     </CardLayout>
   );
 };
@@ -86,5 +98,13 @@ const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
 const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div ref={ref} className={cn('flex items-center p-6 pt-0', className)} {...props} />
+  ),
+);
+
+const CardPicture = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, children, ...props }, ref) => (
+    <div ref={ref} className={cn('flex justify-end pr-8', className)} {...props}>
+      {children}
+    </div>
   ),
 );
