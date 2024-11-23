@@ -20,8 +20,8 @@ export const Program = () => {
       </div>
       <div className="flex justify-center">
         <Card
-          content="Content"
-          title="Title"
+          content=""
+          title=" Introduction to Basic Calisthenics Exercises"
           footer={
             <div className="flex w-full justify-end">
               <Button onClick={handleClick} variant="info">
@@ -29,7 +29,7 @@ export const Program = () => {
               </Button>
             </div>
           }
-          headerDescription="Description"
+          headerDescription="Starter exercices for calisthenics"
           variant="info"
         />
       </div>
