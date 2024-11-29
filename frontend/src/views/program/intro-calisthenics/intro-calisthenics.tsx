@@ -4,7 +4,7 @@ import { metData } from '@/data/met';
 import { CardImage } from './components/CardImage';
 
 const exoIds = [1, 2, 4, 6, 11, 16];
-const exoData = metData.filter((item) => exoIds.includes(item.ID));
+const exoData = metData.filter((item) => exoIds.includes(item.id));
 
 export const IntroCalisthenics = () => {
   return (
@@ -32,7 +32,7 @@ export const IntroCalisthenics = () => {
           <div className="container mx-auto grid grid-cols-1 gap-8 p-8 px-4 md:grid-cols-2 lg:grid-cols-2">
             {exoData.map((data) => {
               //data = props du CardImage
-              const { activity, description, rep, series, picture } = data;
+              const { activity, description, rep, series, pictureUrl } = data;
               return (
                 <CardImage
                   title={activity}
@@ -43,7 +43,7 @@ export const IntroCalisthenics = () => {
                       <span>{series}</span>
                     </>
                   }
-                  imageUrl={picture}
+                  imageUrl={pictureUrl}
                 />
               );
             })}
