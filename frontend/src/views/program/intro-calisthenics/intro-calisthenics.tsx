@@ -1,13 +1,13 @@
 'use client';
 
-import { Card } from '@/components/ui/card';
 import { metData } from '@/data/met';
-import pullUpImg from '@/public/Pull up.gif';
-import pushUpImg from '@/public/Push up.gif';
-import plankImg from '@/public/Plank.jpg';
-import squatImg from '@/public/Squat.gif';
 import dipsImg from '@/public/Dips.gif';
 import lSitDynImg from '@/public/L sit Dyn.gif';
+import plankImg from '@/public/Plank.jpg';
+import pullUpImg from '@/public/Pull up.gif';
+import pushUpImg from '@/public/Push up.gif';
+import squatImg from '@/public/Squat.gif';
+import { CardImage } from './components/CardImage';
 
 const pullUp = metData.find((item) => item.ID === 1);
 const pushUp = metData.find((item) => item.ID === 2);
@@ -39,54 +39,72 @@ export const IntroCalisthenics = () => {
             dive into the basics!
           </p>
           <div className="container mx-auto grid grid-cols-1 gap-8 p-8 px-4 md:grid-cols-2 lg:grid-cols-2">
-            <Card
+            <CardImage
               title={pullUp?.activity}
               headerDescription="Action of pulling the body up and down with arms on a horizontal bar"
-              content="10x rep's"
-              footer="4 series"
-              image={pullUpImg.src}
-              variant="default"
-            ></Card>
-            <Card
+              content={
+                <>
+                  <span>10x rep's</span>
+                  <span>4 series</span>
+                </>
+              }
+              imageUrl={pullUpImg.src}
+            ></CardImage>
+            <CardImage
               title={pushUp?.activity}
               headerDescription="Action of pushing the body up and down with arms on the ground"
-              content="10x rep's"
-              footer="4 series"
-              image={pushUpImg.src}
-              variant="default"
-            ></Card>
-            <Card
+              content={
+                <>
+                  <span>10x rep's</span>
+                  <span>4 series</span>
+                </>
+              }
+              imageUrl={pushUpImg.src}
+            ></CardImage>
+            <CardImage
               title={plank?.activity}
               headerDescription="Action of keeping the body in a horizontal elbow on the ground and feet"
-              content="30 sec"
-              footer="4 series"
-              image={plankImg.src}
-              variant="default"
-            ></Card>
-            <Card
+              content={
+                <>
+                  <span>30 sec</span>
+                  <span>4 series</span>
+                </>
+              }
+              imageUrl={plankImg.src}
+            ></CardImage>
+            <CardImage
               title={squat?.activity}
               headerDescription="Action of sitting and then pushing upward the body while standing on feet"
-              content="20x rep's"
-              footer="4 series"
-              image={squatImg.src}
-              variant="default"
-            ></Card>
-            <Card
+              content={
+                <>
+                  <span>20x rep's</span>
+                  <span>4 series</span>
+                </>
+              }
+              imageUrl={squatImg.src}
+            ></CardImage>
+            <CardImage
               title={dips?.activity}
               headerDescription="Action of pushing the body up and down with arms while between two horizontal bars"
-              content="10x rep's"
-              footer="4 series"
-              image={dipsImg.src}
-              variant="default"
-            ></Card>
-            <Card
+              content={
+                <>
+                  <span>10x rep's</span>
+                  <span>4 series</span>
+                </>
+              }
+              imageUrl={dipsImg.src}
+            ></CardImage>
+            <CardImage
               title={lSitDyn?.activity}
               headerDescription="Action of elevating both legs to a form of L while standing between two bars"
-              content="10x rep's"
-              footer="4 series"
-              image={lSitDynImg.src}
-              variant="default"
-            ></Card>
+              content={
+                <>
+                  <span>10x rep's</span>
+                  <span>4 series</span>
+                </>
+              }
+              imageUrl={lSitDynImg.src}
+            ></CardImage>
           </div>
         </div>
       </div>
