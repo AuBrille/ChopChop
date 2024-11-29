@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { ButtonMich } from '@/components/ui/buttonMich/ButtonMich';
+import { Card } from '@/components/ui/card/Card';
 
 export const Program = () => {
   const { push } = useRouter();
@@ -24,9 +24,9 @@ export const Program = () => {
           title=" Introduction to Basic Calisthenics Exercises"
           footer={
             <div className="flex w-full justify-end">
-              <Button onClick={handleClick} variant="info">
+              <ButtonMich onClick={handleClick} variant="info">
                 View
-              </Button>
+              </ButtonMich>
             </div>
           }
           headerDescription="Starter exercices for calisthenics"

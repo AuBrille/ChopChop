@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { ButtonMich } from '@/components/ui/buttonMich/ButtonMich';
+import { Card } from '@/components/ui/card/Card';
 
 const variants = ['default', 'success', 'error', 'info', 'warning', 'outline'] as const;
 const buttonSizes = ['sm', 'default', 'md', 'lg', 'icon'] as const;
@@ -12,9 +12,9 @@ export const Component = () => {
           <div className="flex gap-2" key={variant}>
             {buttonSizes.map((buttonSize) => {
               return (
-                <Button variant={variant} size={buttonSize} key={buttonSize}>
+                <ButtonMich variant={variant} size={buttonSize} key={buttonSize}>
                   {buttonSize === 'icon' ? 'i' : `Button ${buttonSize}`}
-                </Button>
+                </ButtonMich>
               );
             })}
           </div>
@@ -31,7 +31,7 @@ export const Component = () => {
               content={<div className="grid w-full items-center gap-4">Content</div>}
               footer={
                 <div className="flex justify-end">
-                  <Button variant={variant}>{`Button ${variant}`}</Button>
+                  <ButtonMich variant={variant}>{`Button ${variant}`}</ButtonMich>
                 </div>
               }
             />

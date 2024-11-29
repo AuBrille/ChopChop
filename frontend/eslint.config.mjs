@@ -1,5 +1,3 @@
-import { fixupConfigRules } from '@eslint/compat';
-import { FlatCompat } from '@eslint/eslintrc';
 import eslint from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
 import eslintConfigPrettier from 'eslint-config-prettier';
@@ -8,8 +6,6 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import tsEslint from 'typescript-eslint';
-
-const flatCompat = new FlatCompat();
 
 const restrictEnvAccess = tsEslint.config({
   files: ['**/*.js', '**/*.mjs', '**/*.ts', '**/*.tsx'],
@@ -58,7 +54,14 @@ const restrictEnvAccess = tsEslint.config({
 const baseConfig = tsEslint.config(
   {
     // Globally ignored files
-    ignores: ['.next', 'storybook-static', 'dist', 'node_modules', '**/generated/*', 'eslint.config.mjs'],
+    ignores: [
+      '.next',
+      'storybook-static',
+      'dist',
+      'node_modules',
+      '**/generated/*',
+      'eslint.config.mjs',
+    ],
   },
   {
     files: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.mjs'],
@@ -75,7 +78,12 @@ const baseConfig = tsEslint.config(
       'jsx-a11y/click-events-have-key-events': 'off',
       'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
       'prefer-template': 'warn',
-
+      '@typescript-eslint/no-unnecessary-condition': [
+        'warn',
+        {
+          allowConstantLoopConditions: true,
+        },
+      ],
       '@typescript-eslint/unbound-method': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -160,6 +168,4 @@ export default [
   ...restrictEnvAccess,
 
   eslintConfigPrettier,
-
-  ...fixupConfigRules(flatCompat.extends('plugin:storybook/recommended')),
 ];
