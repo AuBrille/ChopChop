@@ -11,6 +11,7 @@ import { PanelLeft } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '../button/button';
+import { Icon } from '../icon/Icon';
 import { Input } from '../input/Input';
 import { Separator } from '../separator/Separator';
 import { Skeleton } from '../skeleton/Skeleton';
@@ -216,7 +217,7 @@ const SidebarTrigger = React.forwardRef<
   React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, open } = useSidebar();
 
   return (
     <Button
@@ -231,8 +232,8 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      <PanelLeft />
-      <span className="sr-only">Toggle Sidebar</span>
+      {/*  fix icon */}
+      {open ? <PanelLeft /> : <Icon icon="building" />}
     </Button>
   );
 });
@@ -303,13 +304,20 @@ SidebarInput.displayName = 'SidebarInput';
 
 const SidebarHeader = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
   ({ className, ...props }, ref) => {
+    const { state } = useSidebar();
+
     return (
       <div
         ref={ref}
         data-sidebar="header"
         className={cn('flex flex-col gap-2 p-2', className)}
         {...props}
-      />
+      >
+        <div className="flex items-center justify-between gap-1">
+          {state === 'expanded' && <h1 className="text-2xl font-bold">ChopChop</h1>}
+          <SidebarTrigger />
+        </div>
+      </div>
     );
   },
 );

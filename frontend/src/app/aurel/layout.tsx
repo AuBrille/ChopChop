@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import { Icon } from '@/components/ui/icon/Icon';
 import {
   Sidebar,
-  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-  SidebarTrigger,
 } from '@/components/ui/sidebar/Sidebar';
 
 export const dynamic = 'force-dynamic';
@@ -22,25 +25,27 @@ const AurelLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <SidebarProvider>
-        <Sidebar variant="sidebar" collapsible="offcanvas">
-          <SidebarContent>
-            <SidebarMenu>
-              {['home', 'test'].map((project) => (
-                <SidebarMenuItem key={project}>
-                  <SidebarMenuButton asChild>
-                    <a href={`aurel/${project}`}>
-                      <span>{project}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarContent>
+        <Sidebar collapsible="icon">
+          <SidebarHeader />
+          <SidebarGroup>
+            <SidebarGroupLabel>Application</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {['home', 'test'].map((project) => (
+                  <SidebarMenuItem key={project}>
+                    <SidebarMenuButton asChild>
+                      <a href={`aurel/${project}`}>
+                        <Icon icon="building" />
+                        <span>{project}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
         </Sidebar>
-        <main>
-          <SidebarTrigger />
-          {children}
-        </main>
+        <div className="w-full">{children}</div>
       </SidebarProvider>
     </>
   );
