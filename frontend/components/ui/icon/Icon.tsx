@@ -1,4 +1,5 @@
 import type { Icons } from './icons';
+import type { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,11 +8,12 @@ import { icons } from './icons';
 
 interface IconProps {
   icon: Icons;
+  size?: SizeProp;
   className?: string;
 }
 
 export function Icon(props: IconProps): React.JSX.Element {
-  const { icon, className } = props;
+  const { icon, className, size } = props;
 
-  return <FontAwesomeIcon className={cn('fa-sharp h-4 w-4', className)} icon={icons[icon]} />;
+  return <FontAwesomeIcon size={size} className={cn('fa-sharp', className)} icon={icons[icon]} />;
 }

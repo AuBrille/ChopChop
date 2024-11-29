@@ -1,6 +1,11 @@
-import type { Metadata } from 'next';
+'use client';
+
+import type { Icons } from '@/components/ui/icon/icons';
 import type { ReactNode } from 'react';
 
+import { useRouter } from 'next/navigation';
+
+import { Button } from '@/components/ui/button/button';
 import { Icon } from '@/components/ui/icon/Icon';
 import {
   Sidebar,
@@ -16,12 +21,13 @@ import {
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'My Next.js App',
-  description: 'A basic Next.js application',
-};
-
 const AurelLayout = ({ children }: { children: ReactNode }) => {
+  const { push } = useRouter();
+
+  const handleRedirectionClick = (url: string) => {
+    push(url);
+  };
+
   return (
     <>
       <SidebarProvider>
@@ -31,13 +37,23 @@ const AurelLayout = ({ children }: { children: ReactNode }) => {
             <SidebarGroupLabel>Application</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {['home', 'test'].map((project) => (
-                  <SidebarMenuItem key={project}>
+                {[
+                  { url: 'Home', icon: 'building' },
+                  { url: 'Recipes', icon: 'book' },
+                ].map((project) => (
+                  <SidebarMenuItem key={project.url}>
                     <SidebarMenuButton asChild>
-                      <a href={`aurel/${project}`}>
-                        <Icon icon="building" />
-                        <span>{project}</span>
-                      </a>
+                      <div className="">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="w-full"
+                          onClick={() => handleRedirectionClick(project.url)}
+                        >
+                          <Icon icon={project.icon as Icons} />
+                          <span>{project.url}</span>
+                        </Button>
+                      </div>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
