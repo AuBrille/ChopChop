@@ -18,7 +18,7 @@ export const CardImage = (props: CardImageProps) => {
       content={
         <div className="flex justify-between gap-2">
           {content}
-          <img src={imageUrl} alt="illustration" className="h-auto w-1/4 rounded pb-8" />
+          <img src={imageUrl} alt={title} className="h-auto w-1/4 rounded pb-8" />
         </div>
       }
       variant="default"
